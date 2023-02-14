@@ -72,3 +72,17 @@
  (subst 'a 'b '((b c) (b () d)))
  )
 
+;;; --------------------
+(defn number-elements [lst]
+  (defn number-elements-from [lst n]
+    (if (empty? lst)
+      '()
+      (cons
+       (list n (first lst))
+       (number-elements-from (rest lst) (+ n 1)))))
+  (number-elements-from lst 0))
+
+(println
+ (number-elements (list 1 2 3 4))
+ )
+
