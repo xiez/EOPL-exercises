@@ -249,7 +249,8 @@
 (def btree
   (interior-node 'red
                  (interior-node 'bar (leaf 26)
-                                (leaf 12))
+                                (interior-node 'red
+                                               (leaf 12) (leaf 24)))
                  (interior-node 'red (leaf 11) (interior-node 'quux
                                                               (leaf 117)
                                                               (leaf 14)))))
